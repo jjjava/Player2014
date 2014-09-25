@@ -1,20 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package br.com.schumaker.core;
 
 /**
  *
- * @author hudson.sales
+ * @author Hudson Schumaker
+ * @version 1.0.0
+ * @since 25/09/14
  */
-public class Play implements ICommand{
+public class Play implements ICommand {
 
     @Override
     public void execute() {
-        
+
     }
-    
+
 }

@@ -6,6 +6,10 @@ package br.com.schumaker.core;
  * @version 1.0.0
  * @since 25/09/14
  */
-public class Player {
+public class Stop implements ICommand {
+
+    @Override
+    public void execute() {
+    }
 
 }
