@@ -23,6 +23,8 @@ public class CommandList {
 
     public void executeCommands() {
         for (ICommand c : commnads) {
+            
+            
             c.execute();
         }
     }
