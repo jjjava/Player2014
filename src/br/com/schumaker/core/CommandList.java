@@ -1,7 +1,7 @@
 package br.com.schumaker.core;
 
-import br.com.schumaker.gfx.FrMain;
 import java.util.ArrayList;
+import javazoom.jl.decoder.JavaLayerException;
 
 /**
  *
@@ -22,15 +22,20 @@ public class CommandList {
     }
 
     public void executeCommands() {
-        for (ICommand c : commnads) {
-            while (commnads.size() > 0) {
-                c.execute();
-                //FrMain.getInstance().setMusicName(c.);
-                commnads.remove(c);
-                while (!PlayerFacade.getInstance().isFinished()) {
+        new Thread() {
+            @Override
+            public void run() {
 
+                for (ICommand c : commnads) {
+                    while (commnads.size() > 0) {
+                        c.execute();
+                        //FrMain.getInstance().setMusicName(c.);
+                        commnads.remove(c);
+                        while (!PlayerFacade.getInstance().isFinished()) {
+                        }
+                    }
                 }
             }
-        }
+        }.start();
     }
 }
