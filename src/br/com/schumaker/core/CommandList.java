@@ -2,7 +2,9 @@ package br.com.schumaker.core;
 
 /**
  *
- * @author hudson.sales
+ * @author Hudson Schumaker
+ * @version 1.0.0
+ * @since 25/09/14
  */
 public class CommandList {
 
