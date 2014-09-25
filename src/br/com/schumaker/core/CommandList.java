@@ -12,8 +12,10 @@ import javazoom.jl.decoder.JavaLayerException;
 public class CommandList {
 
     private ArrayList<ICommand> commnads;
+    private boolean isPlaying;
 
     public CommandList() {
+        isPlaying = false;
         commnads = new ArrayList<>();
     }
 
@@ -22,20 +24,30 @@ public class CommandList {
     }
 
     public void executeCommands() {
-        new Thread() {
-            @Override
-            public void run() {
-
-                for (ICommand c : commnads) {
-                    while (commnads.size() > 0) {
+        System.out.println("entrou");
+        if (!isPlaying) {
+            isPlaying = true;
+            new Thread() {
+                @Override
+                public void run() {
+                    System.out.println("size:" + commnads.size());
+                    for (ICommand c : commnads) {
+                        System.out.println("looping");
                         c.execute();
+
+                        System.out.println("size:" + commnads.size());
                         //FrMain.getInstance().setMusicName(c.);
-                        commnads.remove(c);
+
                         while (!PlayerFacade.getInstance().isFinished()) {
                         }
+                        System.out.println("W");
                     }
+                    System.out.println("F");
+                    commnads.clear();
+                    System.out.println("size:" + commnads.size());
+                    isPlaying = false;
                 }
-            }
-        }.start();
+            }.start();
+        }
     }
 }

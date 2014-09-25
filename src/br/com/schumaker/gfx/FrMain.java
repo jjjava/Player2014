@@ -87,7 +87,7 @@ public class FrMain extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jsPlayTime, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
+            .addComponent(jsPlayTime, javax.swing.GroupLayout.DEFAULT_SIZE, 645, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btPlay)
@@ -95,8 +95,8 @@ public class FrMain extends javax.swing.JFrame {
                 .addComponent(btStop))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jlMusicName)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jlMusicName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

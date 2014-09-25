@@ -46,6 +46,7 @@ public class CoreFrMain {
             File files[] = file.listFiles();
             for (File f : files) {
                 commandList.addCommand(new Play(f.getName(), f.getAbsolutePath()));
+                System.out.println(f.getName());
             }
         }
     }

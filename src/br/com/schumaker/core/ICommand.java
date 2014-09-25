@@ -10,4 +10,5 @@ package br.com.schumaker.core;
 public interface ICommand {
 
     void execute();
+    String getFileName();
 }
