@@ -1,17 +1,15 @@
 package br.com.schumaker.gfx;
 
-import br.com.schumaker.core.CommandList;
 import br.com.schumaker.core.CoreFrMain;
 
 /**
  *
  * @author Hudson Schumaker
  * @version 1.0.0
- * @since 25/09/14 Singleton
+ * @since 25/09/14 
+ * Singleton
  */
 public class FrMain extends javax.swing.JFrame {
-
-
 
     private static class FrMainHolder {
 
@@ -25,8 +23,8 @@ public class FrMain extends javax.swing.JFrame {
     public static FrMain getInstance() {
         return FrMain.FrMainHolder.INSTANCE;
     }
-    
-    public void setMusicName(String musicName){
+
+    public void setMusicName(String musicName) {
         jlMusicName.setText(musicName);
     }
 
@@ -122,13 +120,11 @@ public class FrMain extends javax.swing.JFrame {
     }//GEN-LAST:event_btPlayActionPerformed
 
     private void btStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btStopActionPerformed
-
-
+        CoreFrMain.getInstance().stop();
     }//GEN-LAST:event_btStopActionPerformed
 
     private void mOpenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mOpenActionPerformed
         CoreFrMain.getInstance().getFiles();
-
     }//GEN-LAST:event_mOpenActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

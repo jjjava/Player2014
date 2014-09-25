@@ -11,7 +11,7 @@ import javax.swing.JFileChooser;
 public class CoreFrMain {
 
     private volatile static CoreFrMain instance = null;
-    private ArrayList<String> fileList;
+    private final ArrayList<String> fileList;
     private final CommandList commandList;
 
     private CoreFrMain() {
@@ -31,7 +31,10 @@ public class CoreFrMain {
     }
 
     public void play() {
-        PlayerFacade.getInstance().play(fileList.get(0));
+        commandList.executeCommands();
+    }
+    public void stop(){
+        commandList.addCommand(new Stop());
     }
 
     public void getFiles() {
@@ -40,10 +43,9 @@ public class CoreFrMain {
         int result = fileChooser.showOpenDialog(null);
         if (result == JFileChooser.APPROVE_OPTION) {
             File file = fileChooser.getSelectedFile();
-            String aqs[] = file.list();
             File files[] = file.listFiles();
             for (File f : files) {
-                fileList.add(f.getAbsolutePath());
+                commandList.addCommand(new Play(f.getName(), f.getAbsolutePath()));
             }
         }
     }
